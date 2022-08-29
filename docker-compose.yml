@@ -1,0 +1,11 @@
+services:
+  api:
+    platform: linux/amd64
+    build:
+      dockerfile: docker/Api.Dockerfile
+      context: .
+    ports:
+      - 8080:8080
+    command: npm run start
+    volumes:
+      - ./:/usr/src/app
