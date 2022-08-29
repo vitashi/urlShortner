@@ -1,0 +1,7 @@
+node_modules
+dist
+.env
+.envrc
+.history
+.DS_Store
+.vscode
