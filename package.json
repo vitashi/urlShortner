@@ -1,0 +1,29 @@
+{
+  "name": "the-shortest-url-cwtngm",
+  "version": "1.0.0",
+  "description": "Your assignment is to implement a URL shortening service using Node and any framework.",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npx nodemon -x ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://finn-gmbh-obxflm@git.codesubmit.io/finn-gmbh/the-shortest-url-cwtngm"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^28.1.8",
+    "@types/node": "^18.7.13",
+    "nodemon": "^2.0.19",
+    "ts-jest": "^28.0.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.2"
+  }
+}
