@@ -37,7 +37,8 @@ route.post('/', async (req: express.Request, res: express.Response): Promise<voi
             results.encodedURL = response
             res.status(StatusCodes.ACCEPTED)
         }
-    }catch(e){
+    }catch(error){
+        console.error(`Encode error: ${error}`)
         results.message = EncodeMessages.CONFLICT
         res.status(StatusCodes.CONFLICT)
     }
