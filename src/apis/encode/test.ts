@@ -3,7 +3,7 @@ import { app } from "../../app";
 import { EncodeMessages, IEncodeInputs, IEncodeResults } from "./types";
 import {StatusCodes} from 'http-status-codes';
 
-describe("Encoding error cases", () => {
+describe("Encoding", () => {
 
     it("API call with no body is rejected",  async () => {
         const response = await request(app).post('/encode').send()
