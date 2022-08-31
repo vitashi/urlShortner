@@ -1,8 +1,10 @@
 import express from "express";
 import { route as encodeRoute } from "./apis/encode/route";
 import  bodyParser from "body-parser";
+import { HashTable } from "./store/hashTable";
 
 export const app = express();
+export const store = new HashTable()
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

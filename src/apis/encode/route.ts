@@ -1,6 +1,6 @@
 import express from "express";
 import { encode } from "./api"
-import { IEncodeInputs } from "./types"
+import { EncodeMessages, IEncodeInputs, IEncodeResults } from "./types"
 import { StatusCodes } from 'http-status-codes';
 
 export const route = express.Router()
@@ -19,14 +19,30 @@ route.post('/', async (req: express.Request, res: express.Response): Promise<voi
     
     const URLString = req.body.rawURL
 
-    if (!isValidURL(URLString)){
-        res.status(StatusCodes.BAD_REQUEST).send()
-
-    }else{
-        const requestParams : IEncodeInputs = {
-            rawURL: URLString
-        }
-        const response = await encode(requestParams)
-        res.status(StatusCodes.ACCEPTED).json(response)
+    const results: IEncodeResults = {
+        rawURL: URLString,
+        message: EncodeMessages.MALFORMED
     }
+
+    try{
+        if (!isValidURL(URLString)){
+            res.status(StatusCodes.BAD_REQUEST)
+    
+        }else{
+            const requestParams : IEncodeInputs = {
+                rawURL: URLString
+            }
+            const response = await encode(requestParams)
+            results.message = EncodeMessages.SUCCESS
+            results.encodedURL = response
+            res.status(StatusCodes.ACCEPTED)
+        }
+    }catch(e){
+        results.message = EncodeMessages.CONFLICT
+        res.status(StatusCodes.CONFLICT)
+    }
+
+    res.json(results)
+
+    
 })
