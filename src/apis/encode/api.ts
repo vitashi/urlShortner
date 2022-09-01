@@ -1,10 +1,19 @@
+/**
+ * encode api module
+ * @module api
+ */
+
 import { EncodeMessages, IEncodeAPIResults, IEncodeInputs, IEncodeResults } from "./types"
 import { store } from "../../app"
 import { StatusCodes } from "http-status-codes";
 
-
-const isValidURL = (URLString: string): Boolean => {
-    // Handling validations here but we could consider using https://www.npmjs.com/package/class-validator here.
+/**
+ * function to check if a URL is valid or not. It tries to create a standard URL object from the string passed it but we could consider using https://www.npmjs.com/package/class-validator later.
+ * @function isValidURL
+ * @param {string} URLString - The url to be validated
+ * @returns {boolean} - true if valid and false if not
+ */
+const isValidURL = (URLString: string): boolean => {
     try { 
         return Boolean(new URL(URLString)); 
     }
@@ -13,6 +22,13 @@ const isValidURL = (URLString: string): Boolean => {
     }
 }
 
+/**
+ * function to  encode a url string
+ * @async
+ * @function encode
+ * @param {IEncodeInputs} requestParams - request parameters from the api call
+ * @returns {Promise<IEncodeAPIResults>} - A response object with status and result keys
+ */
 export const encode = async (requestParams: IEncodeInputs): Promise<IEncodeAPIResults> => {
     let status;
 

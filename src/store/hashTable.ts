@@ -27,7 +27,7 @@ export class HashTable{
         return this.getBase62Hash(crcHash)
     }
 
-    async put(rawString: string, encodedString: string): Promise<Boolean>{
+    async put(rawString: string, encodedString: string): Promise<boolean>{
         
         if (this.table.hasOwnProperty(encodedString)){
             throw new Error(`Collision detected. An attempt to overwrite ${encodedString} was rejected`)
