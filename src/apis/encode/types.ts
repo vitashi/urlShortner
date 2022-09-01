@@ -1,3 +1,4 @@
+import { IAPIResults } from "../types";
 
 export interface IEncodeInputs {
   rawURL: string;
@@ -13,4 +14,8 @@ export interface IEncodeResults {
   encodedURL?: string;
   rawURL: string;
   message: EncodeMessages;
+}
+
+export interface IEncodeAPIResults extends IAPIResults{
+  results: IEncodeResults
 }
