@@ -4,7 +4,7 @@
  * @group unit
  */
 
-import { HashTable } from "./hashTable";
+import { HashTable } from "../hashTable";
 
 describe("Store APIs", () => {
 
