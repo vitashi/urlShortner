@@ -1,46 +1,41 @@
-### Objective
+# URL shortening service
 
-Your assignment is to implement a URL shortening service using Node and any framework.
 
-### Brief
+### Setup
 
-ShortLink is a URL shortening service where you enter a URL such as https://codesubmit.io/library/react and it returns a short URL such as http://short.est/GeAi9K.
+#### Prerequisites
+1. Docker
+2. Docker compose
+3. NodeJS
 
-### Tasks
+#### Running the project
 
-- Implement assignment using:
-  - Language: **Node**
-  - Framework: **any framework**
-  - Two endpoints are required
-    - /encode - Encodes a URL to a shortened URL
-    - /decode - Decodes a shortened URL to its original URL.
-  - Both endpoints should return JSON
-- There is no restriction on how your encode/decode algorithm should work. You just need to make sure that a URL can be encoded to a short URL and the short URL can be decoded to the original URL. **You do not need to persist short URLs to a database. Keep them in memory.**
-- Provide detailed instructions on how to run your assignment in a separate markdown file
-- Provide API tests for both endpoints
+To run the service, in the root folder, run;
+```
+docker compose up --build
+```
+This is only required the first time. For the subsequent runs;
+```
+docker compose up
+```
 
-### Evaluation Criteria
+#### Running tests
+There are two groups of tests include.
+To run unit tests;
+```
+npm run unit-tests
+```
 
-- **Node** best practices (**TypeScript** is always a plus)
-- Show us your work through your commit history
-- Completeness: did you complete the features?
-- Correctness: does the functionality act in sensible, thought-out ways including proper loading and error state handling?
-- Maintainability: is it written in a clean, maintainable way?
-  - Dependency management & packaging
-  - Project structure
-  - Readability
-  - Code complexity
-  - Modern stack
-- Performance
-- Testing: is the system adequately tested?
-  - Unit testing
-  - Integration testing
-  - E2E
+To run integration tests;
+```
+npm run integration-tests
+```
 
-### CodeSubmit
+To run all of tests at the same time;
+```
+npm test
+```
 
-Please organize, design, test and document your code as if it were going into production - then push your changes to the master branch. After you have pushed your code, you may submit the assignment on the assignment page.
 
-All the best and happy coding,
-
-The finn GmbH Team
+#### More
+1. [Assignment](mds/Assignment.md)
