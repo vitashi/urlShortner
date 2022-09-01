@@ -35,6 +35,10 @@ To run all of tests at the same time;
 ```
 npm test
 ```
+Running all the tests creates an html test coverage report which can be view on the browser. This file is located here;
+```
+./coverage/lcov-report/index.html
+```
 
 
 #### More
