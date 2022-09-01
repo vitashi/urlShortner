@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx nodemon -x ts-node src/index.ts",
     "build": "npx tsc",
-    "test": "jest",
+    "test": "jest --coverage",
     "integration-tests": "jest --group=integration",
     "unit-tests": "jest --group=unit"
   },
