@@ -5,14 +5,12 @@ import { StatusCodes } from "http-status-codes"
 export const decode = async (requestParams: IDecodeInputs): Promise<IDecodeAPIResults> => {
     let status;
 
-    const encodedString = requestParams.encodedString
-
     const results: IDecodeResults = {
-        encodedURL: encodedString,
+        encodedURL: requestParams.encodedString,
         message: DecodeMessages.MALFORMED
     }
 
-    if (!encodedString){
+    if (!requestParams.encodedString){
         status = StatusCodes.BAD_REQUEST
 
     }else{
@@ -32,6 +30,6 @@ export const decode = async (requestParams: IDecodeInputs): Promise<IDecodeAPIRe
         status: status,
         results: results
     }
-    
+
     return APIResults
 }
