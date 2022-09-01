@@ -1,8 +1,14 @@
+/**
+ * Tests for Decode API
+ * 
+ * @group integration
+ */
+
 import request from "supertest";
-import { app } from "../../app";
-import { DecodeMessages, IDecodeInputs, IDecodeResults } from "./types";
+import { app } from "../../../app";
+import { DecodeMessages, IDecodeInputs, IDecodeResults } from "../types";
 import {StatusCodes} from 'http-status-codes';
-import { IEncodeInputs } from "../encode/types";
+import { IEncodeInputs } from "../../encode/types";
 
 describe("Decoding", () => {
 

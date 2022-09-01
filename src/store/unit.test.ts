@@ -1,3 +1,9 @@
+/**
+ * Tests for Encode API
+ * 
+ * @group unit
+ */
+
 import { HashTable } from "./hashTable";
 
 describe("Store APIs", () => {

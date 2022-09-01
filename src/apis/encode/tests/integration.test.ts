@@ -1,6 +1,12 @@
+/**
+ * Tests for Encode API
+ * 
+ * @group integration
+ */
+
 import request from "supertest";
-import { app } from "../../app";
-import { EncodeMessages, IEncodeInputs, IEncodeResults } from "./types";
+import { app } from "../../../app";
+import { EncodeMessages, IEncodeInputs, IEncodeResults } from "../types";
 import {StatusCodes} from 'http-status-codes';
 
 describe("Encoding", () => {
